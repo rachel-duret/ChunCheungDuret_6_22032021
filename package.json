@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/rachel-duret/ChunCheungDuret_6_22032021/issues"
   },
-  "homepage": "https://github.com/rachel-duret/ChunCheungDuret_6_22032021#readme"
+  "homepage": "https://github.com/rachel-duret/ChunCheungDuret_6_22032021#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
