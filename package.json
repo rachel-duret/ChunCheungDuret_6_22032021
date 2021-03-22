@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rachel-duret/ChunCheungDuret_6_22032021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rachel-duret/ChunCheungDuret_6_22032021/issues"
+  },
+  "homepage": "https://github.com/rachel-duret/ChunCheungDuret_6_22032021#readme"
+}
