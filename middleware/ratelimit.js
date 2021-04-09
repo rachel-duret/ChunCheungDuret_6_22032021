@@ -10,7 +10,7 @@ const createAccountLimiter = rateLimit({
 // limiter les utilisateurs login 
 const loginAccountLimiter = rateLimit({
     windowMs: 15*60*1000,// limit 15 
-    max: 5,
+    max: 3,
     message:"Vous avez déjà essayé 3 fois accès votre compte,  essayez 15 minutes plus tard !"
 });
 

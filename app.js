@@ -28,7 +28,7 @@ app.use((req, res, next) => {//set header
   });
 
   // connect mongodb cluster , remplace user et password et soPekocko collection
-  mongoose.connect('mongodb+srv://sellers:password00@cluster0.rvcqm.mongodb.net/soPekocko?retryWrites=true&w=majority',
+  mongoose.connect('mongodb+srv://sellers:sellers00@cluster0.rvcqm.mongodb.net/soPekocko?retryWrites=true&w=majority',
 {
   userNewUrlParser: true,
   useUnifiedTopology: true,
