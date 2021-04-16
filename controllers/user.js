@@ -18,14 +18,14 @@ exports.signup = (req, res, next) => {
   const password = req.body.password;
   //pour verifier un mot de pass au mions Au moins 8 à 16 caractères, au moins 1 lettre majuscule, 1 lettre minuscule et 1 chiffre, les autres peuvent être n'importe quel caractère:
   const regPasswordCheck =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^]{8,16}$/g;
-  //pour verifier le format d'email  est correct
+  //pour verifier si le format d'email  est correct
   const regEmailCheck = /\b[\w.%+-]+@[\w.-]+\.[a-zA-Z]{2,6}\b/g;
   if (!email.match(regEmailCheck)){
     throw new Error("Votre email format  n'est pas correct !")
   }else if(!password.match(regPasswordCheck)){
     throw new Error("Votre password n'est pas assez sécurisé !")
   }else{
-    // sécurisé le mot de pass
+    // sécuriser le mot de passe
     bcrypt.hash(password, 10)
     .then(hash => {
       const user = new User({
@@ -49,7 +49,7 @@ exports.signup = (req, res, next) => {
         if (!user) {
           return res.status(401).json({ error: 'Utilisateur non trouvé !' });
         }
-        bcrypt.compare(req.body.password, user.password)// comare le mot de pass 
+        bcrypt.compare(req.body.password, user.password)// compare le mot de passe 
           .then(valid => {
            
             if (!valid) {
