@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
@@ -9,6 +10,12 @@ const sauceRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user');
 const path = require('path');
 const fs = require('fs');
+const userID = process.env.USERID;
+const password = process.env.PASSWORD;
+const collection = process.env.COLLECTION;
+console.log(userID,password,collection);
+
+
 
 
 /* helmet :1* X-Powered-BY  2* X-XSS- Protection; 3* X-permittedCrossDomainPolicies; 4*frameguard; 5*ieNoOpen; 6* dnsPrefetchControl; 7* originAgentCluster; 8*noSniff; 9*hsts; 10* referrerPolicy; 11*expectCt; 12*contentSecurityPolicy */
@@ -28,7 +35,7 @@ app.use((req, res, next) => {//set header
   });
 
   // connect mongodb cluster , remplace user et password et soPekocko collection
-  mongoose.connect('mongodb+srv://sellers:sellers00@cluster0.rvcqm.mongodb.net/soPekocko?retryWrites=true&w=majority',
+  mongoose.connect(`mongodb+srv://${userID}:${password}@cluster0.rvcqm.mongodb.net/${collection}?retryWrites=true&w=majority`,
 {
   userNewUrlParser: true,
   useUnifiedTopology: true,
@@ -40,6 +47,7 @@ app.use((req, res, next) => {//set header
 .catch(()=>{
   console.log(('connxion a mongodb echouee!'));
 })
+
 
 // parametre les cookies en http-only
 /* app.use(session({
